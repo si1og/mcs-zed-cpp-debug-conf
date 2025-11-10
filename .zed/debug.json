@@ -1,41 +1,18 @@
 [
   {
-    "label": "Debug project (LLDB)",
+    "label": "Debug lab1 (LLDB)",
     "build": {
-      "command": "sh",
+      "command": "bash",
       "args": [
         "-c",
-        "cmake -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build"
+        "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build"
       ],
       "cwd": "$ZED_WORKTREE_ROOT"
     },
     "program": "$ZED_WORKTREE_ROOT/build/main",
     "request": "launch",
-    "adapter": "CodeLLDB"
-  },
-  {
-    "label": "Debug project (GDB)",
-    "build": {
-      "command": "sh",
-      "args": [
-        "-c",
-        "cmake -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build"
-      ],
-      "cwd": "$ZED_WORKTREE_ROOT"
-    },
-    "program": "$ZED_WORKTREE_ROOT/build/main",
-    "request": "launch",
-    "adapter": "GDB"
-  },
-  {
-    "label": "Debug project via Makefile (LLDB)",
-    "build": {
-      "command": "make",
-      "args": ["all"],
-      "cwd": "$ZED_WORKTREE_ROOT"
-    },
-    "program": "$ZED_WORKTREE_ROOT/build/main",
-    "request": "launch",
-    "adapter": "CodeLLDB"
+    "adapter": "CodeLLDB",
+    "args": [],
+    "cwd": "$ZED_WORKTREE_ROOT"
   }
 ]
